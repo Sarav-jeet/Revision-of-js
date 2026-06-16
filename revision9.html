@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // ===============================
+        // 1. Function Declaration
+        // ===============================
+        function greet(name) {
+            return `Hello, ${name}`;
+        }
+        console.log(greet("John"));
+
+
+        // ===============================
+        // 2. Function Expression
+        // ===============================
+        const greetExp = function (name) {
+            return `Hello, ${name}`;
+        };
+        console.log(greetExp("Alice"));
+
+
+        // ===============================
+        // 3. Arrow Function
+        // ===============================
+        const greetArrow = (name) => {
+            return `Hello, ${name}`;
+        };
+        console.log(greetArrow("Bob"));
+
+
+        // ===============================
+        // 4. Anonymous Function
+        // ===============================
+        setTimeout(function () {
+            console.log("Anonymous Function Executed");
+        }, 1000);
+
+
+        // ===============================
+        // 5. Named Function Expression
+        // ===============================
+        const greetNamed = function sayHello(name) {
+            return `Hello, ${name}`;
+        };
+        console.log(greetNamed("David"));
+
+
+        // ===============================
+        // 6. IIFE (Immediately Invoked Function Expression)
+        // ===============================
+        (function () {
+            console.log("IIFE Executed");
+        })();
+
+
+        // ===============================
+        // 7. Constructor Function
+        // ===============================
+        function Person(name) {
+            this.name = name;
+        }
+
+        const person1 = new Person("Emma");
+        console.log(person1.name);
+
+
+        // ===============================
+        // 8. Generator Function
+        // ===============================
+        function* numberGenerator() {
+            yield 1;
+            yield 2;
+            yield 3;
+        }
+
+        const gen = numberGenerator();
+        console.log(gen.next()); // { value: 1, done: false }
+        console.log(gen.next()); // { value: 2, done: false }
+
+
+        // ===============================
+        // 9. Async Function
+        // ===============================
+        async function asyncExample() {
+            return "Async Function Result";
+        }
+
+        asyncExample().then(result => console.log(result));
+
+
+        // ===============================
+        // 10. Method Function (Object Method)
+        // ===============================
+        const student = {
+            name: "Rahul",
+
+            greet() {
+                console.log(`Hello, I'm ${this.name}`);
+            }
+        };
+
+        student.greet();
+
+
+        // ===============================
+        // 11. Callback Function
+        // ===============================
+        function processUser(callback) {
+            callback("Karan");
+        }
+
+        processUser(function (name) {
+            console.log(`Welcome ${name}`);
+        });
+    </script>
+</body>
+
+</html>
